@@ -61,8 +61,19 @@ def game(text):
         return tavern.dialog_1()
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
         return tavern.end_room()
-
-
+    #Дом Элании
+    if text.lower() == "Я по поручению мастера Торхилда, расследую дело об исчезновении лорда-протектора Винздора *показываете депешу*".lower():
+        return Elaniya.dialog_1()
+    elif text.lower() == "А что за праздник-то?".lower():
+        return Elaniya.dialog_2()
+    elif text.lower() == "Оооок".lower():
+        return Elaniya.dialog_3()
+    elif text.lower() == "подойти к Элании".lower():
+        return Elaniya.dialog_4()
+    elif text.lower() == "Я хочу поговорить о пропаже вашего жениха. Вы последняя видели его, за день, того как его хватились.\r\n До меня доходят слухи, о том, что лорд странно вел себя последнее время.\r\nСкажите, леди, он не рассказывал вам что ни будь странное или пугающее о своих планах?".lower():
+        return Elaniya.dialog_5()
+    elif text.lower() == "Можете не переживать на этот счет!".lower():
+        return Elaniya.dialog_6()
 def keyboard(text):
     # Башня
     if text.lower() == "Войти в башню".lower():
@@ -149,4 +160,22 @@ def keyboard(text):
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
        keyboard_show = Elaniya.dialog_answer_buttons_1()
        return keyboard_show
-
+    #Дом Элании
+    if text.lower() == "Я по поручению мастера Торхилда, расследую дело об исчезновении лорда-протектора Винздора *показываете депешу*".lower():
+        keyboard_show = Elaniya.dialog_answer_buttons_2()
+        return keyboard_show
+    elif text.lower() == "А что за праздник-то?".lower():
+        keyboard_show = Elaniya.dialog_answer_buttons_3()
+        return keyboard_show
+    elif text.lower() == "Оооок".lower():
+        keyboard_show = Elaniya.dialog_answer_buttons_4()
+        return keyboard_show
+    elif text.lower() == "подойти к Элании".lower():
+        keyboard_show = Elaniya.dialog_answer_buttons_5()
+        return keyboard_show
+    elif text.lower() == "Я хочу поговорить о пропаже вашего жениха. Вы последняя видели его, за день, того как его хватились.\r\n До меня доходят слухи, о том, что лорд странно вел себя последнее время.\r\nСкажите, леди, он не рассказывал вам что ни будь странное или пугающее о своих планах?".lower():
+        keyboard_show = Elaniya.dialog_answer_buttons_6()
+        return keyboard_show
+    elif text.lower() == "Можете не переживать на этот счет!".lower():
+        keyboard_show = Elaniya.end_room_buttons()
+        return keyboard_show
