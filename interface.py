@@ -3,6 +3,8 @@ import Library
 import LordsRoom
 import tavern
 import Elaniya
+import temple
+import Boss
 
 def game(text):
     # Башня
@@ -74,6 +76,49 @@ def game(text):
         return Elaniya.dialog_5()
     elif text.lower() == "Можете не переживать на этот счет!".lower():
         return Elaniya.dialog_6()
+    # Дорога
+    if text.lower() == "Теперь я кажется понимаю о чем вы.. ".lower():
+        return temple.description()
+    elif text.lower() == "Да, кажется я знаю о каком месте идет речь, по южной дороге есть некий храм, последний раз лорда видели именно у него.".lower():
+        return temple.dialog_start()
+    #Храм
+    if text.lower() == "Осмотреть храм".lower():
+        return Boss.dialog_2()
+    elif text.lower() == """Осмотреть внимательно""".lower():
+        return Boss.dialog_3()
+    elif text.lower() == "Солнце в зените, Полумесяц, Восход, Закат".lower():
+        return Boss.portal()
+    elif text.lower() == "Восход, Закат, Солнце в зените, Полумесяц".lower():
+        return Boss.wrogn()
+    elif text.lower() == "Полумесяц, Закат, Солнце в зените, Восход".lower():
+        return Boss.wrogn()
+    elif text.lower() == "Закат, Восход, Полумесяц, Солнце в зените".lower():
+        return Boss.wrogn()
+    elif text.lower() == "Подойти к порталу".lower():
+        return Boss.dialog_4()
+    elif text.lower() == "Незаметно подкрасться к входу".lower():
+        return Boss.dialog_5()
+    elif text.lower() == "Войти в крипту".lower():
+        return Boss.dialog_6()
+    elif text.lower() == "Бежать".lower():
+        return Boss.decide_run()
+    elif text.lower() == "Подставить ученика".lower():
+        return Boss.decide_apprentice()
+    elif text.lower() == "Драться".lower():
+        return Boss.decide_fight()
+    elif text.lower() == "Вы победили приспешников. Отдышавшись, продолжаете путь".lower():
+        return Boss.dialog_7()
+    elif text.lower() == "Подбежать к лорду".lower():
+        return Boss.dialog_8()
+    elif text.lower() == "В бой!".lower():
+        return Boss.boss_defeat()
+    elif text.lower() == "Вы переводите дыхание и осматриваетесь".lower():
+        return Boss.dialog_9()
+    elif text.lower() == """Подойти к алтарю""".lower():
+        return Boss.dialog_10()
+    elif text.lower() == """Помочь лорду встать""".lower():
+        return Boss.dialog_11()
+
 def keyboard(text):
     # Башня
     if text.lower() == "Войти в башню".lower():
@@ -178,4 +223,66 @@ def keyboard(text):
         return keyboard_show
     elif text.lower() == "Можете не переживать на этот счет!".lower():
         keyboard_show = Elaniya.end_room_buttons()
+        return keyboard_show
+    #Дорога
+    if text.lower() == "Теперь я кажется понимаю о чем вы.. ".lower():
+        keyboard_show = temple.initiate()
+        return keyboard_show
+    elif text.lower() == "Да, кажется я знаю о каком месте идет речь, по южной дороге есть некий храм, последний раз лорда видели именно у него.".lower():
+        keyboard_show = temple.dialog_answer_buttons_1()
+        return keyboard_show
+    #Храм
+    if text.lower() == "Осмотреть храм".lower():
+        keyboard_show = Boss.dialog_answer_buttons_3()
+        return keyboard_show
+    elif text.lower() == """Осмотреть внимательно""".lower():
+        keyboard_show = Boss.statui_asnwer()
+        return keyboard_show
+    elif text.lower() == "Солнце в зените, Полумесяц, Восход, Закат".lower():
+        keyboard_show = Boss.dialog_answer_buttons_4()
+        return keyboard_show
+    elif text.lower() == "Восход, Закат, Солнце в зените, Полумесяц".lower():
+        keyboard_show = Boss.statui_asnwer()
+        return keyboard_show
+    elif text.lower() == "Полумесяц, Закат, Солнце в зените, Восход".lower():
+        keyboard_show = Boss.statui_asnwer()
+        return keyboard_show
+    elif text.lower() == "Закат, Восход, Полумесяц, Солнце в зените".lower():
+        keyboard_show = Boss.statui_asnwer()
+        return keyboard_show
+    elif text.lower() == "Подойти к порталу".lower():
+        keyboard_show = Boss.dialog_answer_buttons_5()
+        return keyboard_show
+    elif text.lower() == "Незаметно подкрасться к входу".lower():
+        keyboard_show = Boss.dialog_answer_buttons_6()
+        return keyboard_show
+    elif text.lower() == "Войти в крипту".lower():
+        keyboard_show = Boss.decide_butons()
+        return keyboard_show
+    elif text.lower() == "Бежать".lower():
+        keyboard_show = Boss.run_buttons()
+        return keyboard_show
+    elif text.lower() == "Подставить ученика".lower():
+        keyboard_show = Boss.apprentice_buttons()
+        return keyboard_show
+    elif text.lower() == "Драться".lower():
+        keyboard_show = Boss.draka()
+        return keyboard_show
+    elif text.lower() == "Вы победили приспешников. Отдышавшись, продолжаете путь".lower():
+        keyboard_show = Boss.dialog_answer_buttons_8()
+        return keyboard_show
+    elif text.lower() == "Подбежать к лорду".lower():
+        keyboard_show = Boss.bitva_boss()
+        return keyboard_show
+    elif text.lower() == "В бой!".lower():
+        keyboard_show = Boss.rest()
+        return keyboard_show
+    elif text.lower() == "Вы переводите дыхание и осматриваетесь".lower():
+        keyboard_show = Boss.dialog_answer_buttons_10()
+        return keyboard_show
+    elif text.lower() == """Подойти к алтарю""".lower():
+        keyboard_show = Boss.dialog_answer_buttons_11()
+        return keyboard_show
+    elif text.lower() == """Помочь лорду встать""".lower():
+        keyboard_show = Boss.end_room_buttons()
         return keyboard_show

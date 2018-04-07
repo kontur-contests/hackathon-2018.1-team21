@@ -52,26 +52,31 @@ def dialog_3():
     Необходимо расположить вращающиеся элементы правильно относительно каждой статуи. Как только последняя из колонн 
     принимает правильное положение, в центре строения открывается портал"""
 
-
 #повороты статуй
 #Восток – восход(3 - 1)
 #Запад – закат(4 - 2)
 #Юг – зенит(1 - 3)
 #Север – полумесяц(2 - 4)
-def statui():
-    while True:
-        q1 = random.randint(1, 4)
-        w1 = random.randint(1, 4)
-        q2 = random.randint(1, 4)
-        w2 = random.randint(1, 4)
-        q3 = random.randint(1, 4)
-        w3 = random.randint(1, 4)
-        q4 = random.randint(1, 4)
-        w4 = random.randint(1, 4)
-        if q1==3 and w1==1 and q2==4 and w2==2 and q3==1 and w3==3 and q4==2 and w4==4:
-            return "Колонны приняли правильное положение"
-        continue
+def portal():
+    return "В центре строения открывается портал"
 
+def wrogn():
+    return "Ничего не произошло, вы вращаете колонны дальше"
+    #while True:
+#        q1 = random.randint(1, 4)
+#        w1 = random.randint(1, 4)
+#        q2 = random.randint(1, 4)
+#        w2 = random.randint(1, 4)
+#        q3 = random.randint(1, 4)
+#       w3 = random.randint(1, 4)
+#        q4 = random.randint(1, 4)
+#        w4 = random.randint(1, 4)
+#        if q1==3 and w1==1 and q2==4 and w2==2 and q3==1 and w3==3 and q4==2 and w4==4:
+#            return "Колонны приняли правильное положение"
+#        continue
+def statui_asnwer():
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Восход, Закат, Солнце в зените, Полумесяц")], [KeyboardButton(text="Солнце в зените, Полумесяц, Восход, Закат")], [KeyboardButton(text="Полумесяц, Закат, Солнце в зените, Восход")], [KeyboardButton(text="Закат, Восход, Полумесяц, Солнце в зените")]])
+    return keyboard
 
 
 def dialog_answer_buttons_4():
@@ -108,6 +113,27 @@ def dialog_6():
     отличными жертвами! Взять их! *Вытягивает руку в вашем направлении*
     И вы видите, как справа и слева от стен отскакивают такие же тени в темных балахонах, обступая вас. """
 
+def decide_butons():
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Драться")], [KeyboardButton(text="Бежать")], [KeyboardButton(text="Подставить ученика")]])
+    return keyboard
+
+def decide_run():
+    return "А куда вы собственно собрались бежать, вход то за вами закрыли 2 тени, но это промедление стоило вам жизни. Вы мертвы"
+
+def decide_apprentice():
+    return "Резко схватив ученика на шкирку вы кинули его на 2 теней стоящих у входа, эта заварушка позволила вам сбежать. Но выполнению задания это не поспособствовало, у вас отняли деньги. И у вас не осталось ничего кроме как пить в кабаке, глядя на то, как ученик греется в лучах славы, ведь в той битве он вышел победителем и спас лорда!"
+
+def decide_fight():
+    return "Вы принимаете решение драться и встаете в боевую позу"
+
+def run_buttons():
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="/Start")]])
+    return keyboard
+
+def apprentice_buttons():
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="/Start")]])
+    return keyboard
+
 def draka():
     hpg = 6
     hpp1 = 3
@@ -121,70 +147,86 @@ def draka():
             hpp1 -= 1
             hpp2 -= 1
             if hpp1 == 0 and hpp2 == 0:
-                return "Вы победили приспешников"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                return keyboard
             hpg -= 2
             if hpg == 0:
-                return "Герой погиб"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                return keyboard
         elif n == 2 and m == 2 and p==1:
             hpp1 -= 1
             hpp2 -= 1
             if hpp1 == 0 and hpp2 == 0:
-                return "Вы победили приспешников"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                return keyboard
             hpg -= 1
             if hpg == 0:
-                return "Герой погиб"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                return keyboard
         elif n == 2 and m == 1 and p == 1:
             hpp1 -= 1
             hpp2 -= 1
             if hpp1 == 0 and hpp2 == 0:
-                return "Вы победили приспешников"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                return keyboard
             hpg -= 0
             if hpg == 0:
-                return "Герой погиб"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                return keyboard
             elif n == 2 and m == 1 and p == 2:
                 hpp1 -= 1
                 hpp2 -= 1
                 if hpp1 == 0 and hpp2 == 0:
-                    return "Вы победили приспешников"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                    return keyboard
                 hpg - 1
                 if hpg == 0:
-                    return "Герой погиб"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    return keyboard
                 continue
             elif n == 1 and m == 2 and p == 2:
                 hpp1 -= 0
                 hpp2 -= 0
                 if hpp1 == 0 and hpp2 == 0:
-                    return "Вы победили приспешников"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                    return keyboard
                 hpg - 2
                 if hpg == 0:
-                    return "Герой погиб"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    return keyboard
                 continue
             elif n == 1 and m == 2 and p == 1:
                 hpp1 -= 0
                 hpp2 -= 0
                 if hpp1 == 0 and hpp2 == 0:
-                    return "Вы победили приспешников"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                    return keyboard
                 hpg - 1
                 if hpg == 0:
-                    return "Герой погиб"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    return keyboard
                 continue
             elif n == 1 and m == 1 and p == 2:
                 hpp1 -= 0
                 hpp2 -= 0
                 if hpp1 == 0 and hpp2 == 0:
-                    return "Вы победили приспешников"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                    return keyboard
                 hpg - 2
                 if hpg == 0:
-                    return "Герой погиб"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    return keyboard
                 continue
             elif n == 1 and m == 1 and p == 1:
                 hpp1 -= 0
                 hpp2 -= 0
                 if hpp1 == 0 and hpp2 == 0:
-                    return "Вы победили приспешников"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
+                    return keyboard
                 hpg - 2
                 if hpg == 0:
-                    return "Герой погиб"
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    return keyboard
                 continue
 
 
@@ -206,6 +248,12 @@ def dialog_8():
 	появляется странное существо, с множеством щупалец и красных разъяренных глаз, оно издает душераздирающий рев и 
 	выбрасывает в вашу сторону щупальце."""
 
+def boss_defeat():
+    return """В пылу какзалось бы бесперспективного сражения, вы замечете, как Ри подбегает к бассейну, он шепчет какое-то заклинание, его ладони 
+                    сближаются, между ними проскакивают искры, воздух в комнате ставится разряженным. Он ступает в воду, 
+                    его голос звучит громче, он резко ударяет ладонями по воде и всю воду в бассейне пронзают всполохи 
+                    молний. Чудовище ревет, испускает последний вздох и падает замертво."""
+
 def bitva_boss():
     hpg = 3
     # Здоровье врага
@@ -216,31 +264,33 @@ def bitva_boss():
         if n == 2 and m == 2:
             hpe -= 1
             if hpe == 1:
-                return """Вы замечете, как Ри подходит к бассейну, он шепчет какое-то заклинание, его ладони 
-                сближаются, между ними проскакивают искры, воздух в комнате ставится разряженным. Он ступает в воду, 
-                его голос звучит громче, он резко ударяет ладонями по воде и всю воду в бассейне пронзают всполохи 
-                молний. Чудовище ревет, испускает последний вздох и падает замертво."""
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="В бой!")]])
+                return keyboard
             hpg -= 1
             if hpg == 0:
-                return "Герой погиб! Начните заново"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                return keyboard
             continue
         elif n == 2 and m == 1:
             hpe -= 1
             if hpe == 1:
-                return """Вы замечете, как Ри подходит к бассейну, он шепчет какое-то заклинание, его ладони 
-                сближаются, между ними проскакивают искры, воздух в комнате ставится разряженным. Он ступает в воду, 
-                его голос звучит громче, он резко ударяет ладонями по воде и всю воду в бассейне пронзают всполохи 
-                молний. Чудовище ревет, испускает последний вздох и падает замертво."""
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="В бой!")]])
+                return keyboard
             continue
         elif n == 1 and m == 2:
             hpg -= 1
             if hpg == 0:
-                return "Герой погиб! Начните заново"
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                return keyboard
             continue
         elif n == 1 and m == 1:
             continue
     input()
     pass
+
+def rest():
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы переводите дыхание и осматриваетесь")]])
+    return keyboard
 
 def dialog_9():
 	return """ Когда все стихает вы видите в воде два бездыханных тела. Одно из них принадлежит ученику. 
