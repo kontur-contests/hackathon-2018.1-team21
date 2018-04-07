@@ -56,7 +56,7 @@ def game(text):
         return Library.end_room()
 
     #Таверна
-    if text.lower() == "Таверна".lower():
+    if text.lower() == "Таверна".lower() or text.lower == "Здесь же расположена таверна «Кровавый кабан» ".lower():
         return tavern.description()
     elif text.lower() == "Подойти к мужчине за столом".lower():
         return tavern.dialog_start()
