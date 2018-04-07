@@ -156,3 +156,6 @@ def keyboard(text):
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
        keyboard_show = tavern.initiate()
        return keyboard_show
+
+
+game("Дверь справа – в Библиотеку")
