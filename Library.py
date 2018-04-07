@@ -52,5 +52,6 @@ def end_room():
 		   'сказать, что торговля идет не бойко и несмотря на середину дня, площадь выглядит пустой.'
 
 def end_room_buttons():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Здесь же расположена таверна Кровавый кабан")], [KeyboardButton(text="Поднявщись немного вверх по улице вы попадете в имение Баронессы Элании")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Здесь же расположена таверна Кровавый кабан")],
+											 [KeyboardButton(text="Поднявщись немного вверх по улице вы попадете в имение Баронессы Элании")]])
 	return keyboard
