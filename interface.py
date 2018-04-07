@@ -10,7 +10,7 @@ def game(text):
         return Library.dialog_start()
     elif text.lower() == "Я расследую исчезновение лорда. А ты случайно не Ри?".lower():
         return Library.dialog_1()
-    elif text.lower() == "Эти байки для стражи можешь и оставить, а мне расскажи-ка лучше про это *кладете перед ним книгу в черной обложке*".lower():
+    elif text.lower() == """"Эти байки для стражи можешь и оставить, а мне расскажи-ка лучше про это *кладете перед ним книгу в черной обложке*""".lower():
         return Library.dialog_2()
     elif text.lower() == "Тише-тише, я даже не понимаю, что здесь написано.".lower():
         return Library.dialog_end()
