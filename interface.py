@@ -7,7 +7,6 @@ def game(text):
     # Башня
     if text.lower() == "Войти в башню".lower():
         return Tower.description_bashnya()
-        return Tower.person()
     elif text.lower() == "Где я могу найти их?".lower():
         return Tower.dialog_1()
     elif text.lower() == "По рукам!".lower():
