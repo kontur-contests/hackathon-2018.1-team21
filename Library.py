@@ -25,9 +25,7 @@ def dialog_1():
 		   		уже рассказал страже. *Вы замечаете, как Он ежится и отводит взгляд*"""
 
 def dialog_answer_buttons_2():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="""Эти байки для стражи можешь и оставить, а мне 
-																  расскажи-ка лучше про это *кладете перед ним книгу 
-																  в черной обложке*""")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Эти байки для стражи можешь и оставить, а мне расскажи-ка лучше про это *кладете перед ним книгу в черной обложке*")]])
 	return keyboard
 
 def dialog_2():
@@ -55,6 +53,5 @@ def end_room():
 
 def end_room_buttons():
 	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Здесь же расположена таверна «Кровавый кабан» ")],
-											 [KeyboardButton(text="""Поднявщись немного вверх по улице вы попадете в 
-											 						имение	Баронессы Элании""")]])
+											 [KeyboardButton(text="Поднявщись немного вверх по улице вы попадете в имение Баронессы Элании")]])
 	return keyboard
