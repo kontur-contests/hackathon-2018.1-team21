@@ -39,8 +39,8 @@ def game(text):
         return LordsRoom.end_room()
     elif text.lower() == "В библиотеку".lower():
         return Library.description()
-    elif text.lower() == "На площадь".lower():
-        return Palas.end_room()
+ #   elif text.lower() == "На площадь".lower():
+ #       return Palas.end_room()
 
     #Таверна
     if text.lower() == "Таверна".lower():
