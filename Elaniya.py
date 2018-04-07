@@ -13,8 +13,9 @@ def dialog_start():
     пальцем*"""
 
 def dialog_answer_buttons_1():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text=""""Я по поручению мастера Торхилда, расследую дело 
-	об исчезновении лорда-протектора Винздора *показываете депешу""")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="""Я по поручению мастера Торхилда, расследую дело об 
+																  исчезновении лорда-протектора Винздора *показываете 
+																  депешу*""")]])
 	return keyboard
 
 def dialog_1():
