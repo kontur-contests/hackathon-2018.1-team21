@@ -2,6 +2,7 @@ from telepot.namedtuple import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboar
 import Library
 
 def game(text):
+    # Библиотека
     if text.lower() == "Библиотека".lower():
         return Library.description()
     elif text.lower() == "Подойти к человеку".lower():
@@ -15,6 +16,27 @@ def game(text):
     elif text.lower() == "Хм.. ну ладно".lower():
         return Library.end_room()
 
+    # Кабинет лорда
+    if text.lower() == "Кабинет лорда".lower():
+        return LordsRoom.description()
+    elif text.lower() == "Я расследую пропажу лорда Винздора *показываете ему бумагу от мастера Торхилда*".lower():
+        return LordsRoom.dialog_1()
+    elif text.lower() == "Осмотреть стол".lower():
+        return LordsRoom.result_find_1()
+    elif text.lower() == "Осмотреть книжный шкаф".lower():
+        return LordsRoom.result_find_3()
+    elif text.lower() == "Перейти к изучению шкафа".lower():
+        return LordsRoom.result_find_3()
+    elif text.lower() == "Осмотреть внимательно".lower():
+        return LordsRoom.result_find_2()
+    elif text.lower() == "Надеть амулет".lower():
+        return LordsRoom.end_room()
+    elif text.lower() == "Спрятать амулет в карман и перейти к шкафу".lower():
+        return LordsRoom.result_find_3()
+    elif text.lower() == "Положить книгу в карман и выйти из кабинета".lower():
+        return LordsRoom.end_room()
+    elif text.lower() == "В библиотеку".lower():
+        return Library.description()
 
 def keyboard(text):
     if text.lower() == "Библиотека".lower():
@@ -35,3 +57,26 @@ def keyboard(text):
     elif text.lower() == "Хм.. ну ладно".lower():
         keyboard_show = Library.end_room_buttons()
         return keyboard_show
+
+    # Кабинки Лорда
+    if text.lower() == "Кабинет лорда".lower():
+       keyboard_show = LordsRoom.dialog_answer_buttons_1()
+       return keyboard_show
+    elif text.lower() == "Я расследую пропажу лорда Винздора *показываете ему бумагу от мастера Торхилда*".lower():
+       keyboard_show = LordsRoom.find_1()
+       return keyboard_show
+    elif text.lower() == "Осмотреть стол".lower():
+       keyboard_show = LordsRoom.find_2()
+       return keyboard_show
+    elif text.lower() == "Осмотреть книжный шкаф".lower():
+       keyboard_show = LordsRoom.find_4()
+       return keyboard_show
+    elif text.lower() == "Осмотреть внимательно".lower():
+       keyboard_show = LordsRoom.find_3()
+       return keyboard_show
+    elif text.lower() == "Перейти к изучению шкафа".lower():
+       keyboard_show = LordsRoom.find_4()
+       return keyboard_show
+    elif text.lower() == "Надеть амулет".lower():
+       keyboard_show = LordsRoom.end_room_buttons()
+       return keyboard_show
