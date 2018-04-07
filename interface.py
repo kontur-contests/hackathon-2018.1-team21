@@ -37,6 +37,8 @@ def game(text):
         return LordsRoom.end_room()
     elif text.lower() == "В библиотеку".lower():
         return Library.description()
+    elif text.lower() == "На площадь".lower():
+        return Palas.end_room()
 
 def keyboard(text):
     if text.lower() == "Библиотека".lower():
@@ -80,3 +82,16 @@ def keyboard(text):
     elif text.lower() == "Надеть амулет".lower():
        keyboard_show = LordsRoom.end_room_buttons()
        return keyboard_show
+    elif text.lower() == "Спрятать амулет в карман и перейти к шкафу".lower():
+       keyboard_show = LordsRoom.find_4()
+       return keyboard_show
+    elif text.lower() == "Положить книгу в карман и выйти из кабинета".lower():
+       keyboard_show = LordsRoom.end_room_buttons()
+       return keyboard_show
+    elif text.lower() == "В библиотеку".lower():
+        keyboard_show = Library.initiate()
+        return keyboard_show
+    elif text.lower() == "На площадь".lower():
+        keyboard_show = Library.end_room_buttons()
+        return keyboard_show
+
