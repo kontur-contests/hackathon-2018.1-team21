@@ -3,7 +3,7 @@ import Library
 
 def game(text):
     if text == "Библиотека":
-        print("%s" % Library.description())
+        return Library.description()
     else:
         return "Ну е мае"
 
@@ -12,8 +12,6 @@ def keyboard(text):
     if text == "Библиотека":
        keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="%s" % Library.initiate())]])
        return keyboard
-
-
 
 
 
