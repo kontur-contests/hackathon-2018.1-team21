@@ -2,6 +2,7 @@ import Tower
 import Library
 import LordsRoom
 import tavern
+import Elaniya
 
 def game(text):
     # Башня
@@ -146,6 +147,6 @@ def keyboard(text):
        keyboard_show = tavern.dialog_answer_buttons_2()
        return keyboard_show
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
-       keyboard_show = tavern.initiate()
+       keyboard_show = Elaniya.dialog_answer_buttons_1()
        return keyboard_show
 
