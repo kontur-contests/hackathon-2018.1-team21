@@ -38,8 +38,8 @@ def game(text):
         return LordsRoom.end_room()
     elif text.lower() == "В библиотеку".lower():
         return Library.description()
- #   elif text.lower() == "На площадь".lower():
- #       return Palas.end_room()
+    elif text.lower() == "На площадь".lower():
+        return Library.end_room()
 
     #Таверна
     if text.lower() == "Таверна".lower():
@@ -49,7 +49,7 @@ def game(text):
     elif text.lower() == "Воу-воу! Палехчи, приятель! Я вообще-то тут, чтобы вернуть тебе уверенность в завтрашнем дне, т.е. твою работу, в общем, лорда ищу. Я знаю, что ты уже все рассказал городским стражам, но может, я угощу стаканчиком и мы побеседуем по душам. Обещаю, что только между нами!".lower():
         return tavern.dialog_1()
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
-        return tavern.dialog_1()
+        return Library.end_room()
 
 
 def keyboard(text):
@@ -107,3 +107,19 @@ def keyboard(text):
         keyboard_show = Library.end_room_buttons()
         return keyboard_show
 
+    # Таверна
+    if text.lower() == "Здесь же расположена таверна «Кровавый кабан» ".lower():
+       keyboard_show = tavern.initiate()
+       return keyboard_show
+    elif text.lower() == "Вернуться на площадь".lower():
+       keyboard_show = Library.end_room_buttons()
+       return keyboard_show
+    elif text.lower() == "Подойти к мужчине за столом".lower():
+       keyboard_show = tavern.dialog_answer_buttons_1()
+       return keyboard_show
+    elif text.lower() == "Воу-воу! Палехчи, приятель! Я вообще-то тут, чтобы вернуть тебе уверенность в завтрашнем дне, т.е. твою работу, в общем, лорда ищу. Я знаю, что ты уже все рассказал городским стражам, но может, я угощу стаканчиком и мы побеседуем по душам. Обещаю, что только между нами!".lower():
+       keyboard_show = tavern.dialog_answer_buttons_2()
+       return keyboard_show
+    elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
+       keyboard_show = tavern.initiate()
+       return keyboard_show
