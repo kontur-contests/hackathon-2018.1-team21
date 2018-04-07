@@ -13,14 +13,12 @@ def dialog_start():
     пальцем*"""
 
 def dialog_answer_buttons_1():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="""Я по поручению мастера Торхилда, расследую дело об 
-исчезновении лорда-протектора Винздора *показываете 
-депешу*""")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Я по поручению мастера Торхилда, расследую дело об исчезновении лорда-протектора Винздора *показываете депешу*")]])
 	return keyboard
 
 def dialog_1():
 	return """Привратник: Хмм. Я конечно впущу вас, но вообще-то лучше не расстраивать сегодня баронессу, у нее 
-	вообще-то праздник, разве вы не видете!"""
+вообще-то праздник, разве вы не видете!"""
 
 def dialog_answer_buttons_2():
 	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="А что за праздник-то?")]])
