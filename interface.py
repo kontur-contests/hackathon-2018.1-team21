@@ -1,6 +1,6 @@
 from telepot.namedtuple import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 import Library
-import LordRoom
+import LordsRoom
 import tavern
 
 def game(text):
