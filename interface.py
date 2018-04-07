@@ -56,8 +56,7 @@ def game(text):
         return tavern.description()
     elif text.lower() == "Подойти к мужчине за столом".lower():
         return tavern.dialog_start()
-    elif text == """Воу-воу! Палехчи, приятель! Я вообще-то тут, чтобы вернуть тебе уверенность в завтрашнем дне, т.е. твою работу, в общем, лорда ищу.
-     Я знаю, что ты уже все рассказал городским стражам, но может, я угощу стаканчиком и мы побеседуем по душам. Обещаю, что только между нами!""":
+    elif text.lower() == "Воу-воу! Палехчи, приятель!".lower():
         return tavern.dialog_1()
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
         return Library.end_room()
@@ -143,8 +142,7 @@ def keyboard(text):
     elif text.lower() == "Подойти к мужчине за столом".lower():
        keyboard_show = tavern.dialog_answer_buttons_1()
        return keyboard_show
-    elif text == """Воу-воу! Палехчи, приятель! Я вообще-то тут, чтобы вернуть тебе уверенность в завтрашнем дне, т.е. твою работу, в общем, лорда ищу.
-     Я знаю, что ты уже все рассказал городским стражам, но может, я угощу стаканчиком и мы побеседуем по душам. Обещаю, что только между нами!""":
+    elif text.lower() == "Воу-воу! Палехчи, приятель!".lower():
        keyboard_show = tavern.dialog_answer_buttons_2()
        return keyboard_show
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
