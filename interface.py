@@ -60,7 +60,7 @@ def game(text):
     elif text.lower() == "Воу-воу! Палехчи, приятель!".lower():
         return tavern.dialog_1()
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
-        return Library.end_room()
+        return tavern.end_room()
 
 
 def keyboard(text):
