@@ -23,5 +23,5 @@ def telegram_webhook():
     if "message" in update:
         text = update["message"]["text"]
         chat_id = update["message"]["chat"]["id"]
-        bot.sendMessage(chat_id, interface.game(text), reply_markup = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Библиотека')]]))
+        bot.sendMessage(chat_id, "%s" % interface.game(text), reply_markup = interface.keyboard(text))
     return "OK"
