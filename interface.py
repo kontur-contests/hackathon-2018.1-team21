@@ -141,7 +141,7 @@ def keyboard(text):
         return keyboard_show
 
     # Таверна
-    if text.lower() == "Здесь же расположена таверна «Кровавый кабан» ".lower():
+    if text.lower() == "Таверна".lower() or text.lower == "Здесь же расположена таверна «Кровавый кабан» ".lower():
        keyboard_show = tavern.initiate()
        return keyboard_show
     elif text.lower() == "Вернуться на площадь".lower():
