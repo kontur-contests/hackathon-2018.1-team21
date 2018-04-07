@@ -1,10 +1,9 @@
 from flask import Flask, request
 import telepot
 import urllib3
-from For_show import start
-from For_show import next_step
-from interface import intro
+import interface
 from telepot.namedtuple import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
+
 
 proxy_url = "http://proxy.server:3128"
 telepot.api._pools = {
@@ -22,7 +21,7 @@ app = Flask(__name__)
 def telegram_webhook():
     update = request.get_json()
     if "message" in update:
-        #text = update["message"]["text"]
+        text = update["message"]["text"]
         chat_id = update["message"]["chat"]["id"]
-        bot.sendMessage(chat_id, intro(), reply_markup=ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Yes"), KeyboardButton(text="No")]]))
+        bot.sendMessage(chat_id, interface.game(text), reply_markup = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text='Библиотека')]]))
     return "OK"
