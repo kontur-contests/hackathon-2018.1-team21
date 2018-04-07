@@ -52,7 +52,7 @@ def game(text):
     elif text.lower() == "На площадь".lower():
         return Library.end_room()
     #Таверна
-    if text.lower == 'Здесь же расположена таверна "Кровавый кабан"'.lower():
+    if text.lower == "Здесь же расположена таверна Кровавый кабан".lower():
         return tavern.description()
     elif text.lower() == "Подойти к мужчине за столом".lower():
         return tavern.dialog_start()
@@ -133,7 +133,7 @@ def keyboard(text):
         keyboard_show = Library.end_room_buttons()
         return keyboard_show
     # Таверна
-    if text.lower == 'Здесь же расположена таверна "Кровавый кабан"'.lower():
+    if text.lower == "Здесь же расположена таверна Кровавый кабан".lower():
        keyboard_show = tavern.initiate()
        return keyboard_show
     elif text.lower() == "Вернуться на площадь".lower():
