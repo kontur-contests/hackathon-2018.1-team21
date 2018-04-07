@@ -1,8 +1,23 @@
+import Tower
 import Library
 import LordsRoom
 import tavern
 
 def game(text):
+    # Башня
+    if text.lower() == "Войти в башню".lower():
+        return Tower.description_bashnya()
+        return Tower.person()
+    elif text.lower() == "Где я могу найти их?".lower():
+        return Tower.dialog_1()
+    elif text.lower() == "По рукам!".lower():
+        return Tower.dialog_2()
+    elif text.lower() == "Дверь за спиной мастера Торхилда, ведет в кабинет лорда".lower():
+        return LordsRoom.description()
+    elif text.lower() == "Дверь справа – в Библиотеку".lower():
+        return Library.description()
+
+
     # Библиотека
     if text.lower() == "Библиотека".lower():
         return Library.description()
@@ -53,6 +68,25 @@ def game(text):
 
 
 def keyboard(text):
+    # Башня
+    if text.lower() == "Войти в башню".lower():
+       keyboard_show = Tower.initiate_bashnya()
+       return keyboard_show
+    elif text.lower() == "Где я могу найти их?".lower():
+       keyboard_show = Tower.dialog_answer_buttons_3()
+       return keyboard_show
+    elif text.lower() == "По рукам!".lower():
+       keyboard_show = Tower.end_room_buttons()
+       return keyboard_show
+    elif text.lower() == "Дверь за спиной мастера Торхилда, ведет в кабинет лорда".lower():
+       keyboard_show = LordsRoom.dialog_answer_buttons_1()
+       return keyboard_show
+    elif text.lower() == "Дверь справа – в Библиотеку".lower():
+       keyboard_show = Library.initiate()
+       return keyboard_show
+
+
+    # Библиотека
     if text.lower() == "Библиотека".lower():
        keyboard_show = Library.initiate()
        return keyboard_show
