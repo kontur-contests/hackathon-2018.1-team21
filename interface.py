@@ -15,8 +15,6 @@ def game(text):
         return LordsRoom.description()
     elif text.lower() == "Дверь справа – в Библиотеку".lower():
         return Library.description()
-
-
     # Библиотека
     if text.lower() == "Библиотека".lower():
         return Library.description()
@@ -30,7 +28,6 @@ def game(text):
         return Library.dialog_end()
     elif text.lower() == "Хм.. ну ладно".lower():
         return Library.end_room()
-
     # Кабинет лорда
     if text.lower() == "Кабинет лорда".lower():
         return LordsRoom.description()
@@ -54,9 +51,8 @@ def game(text):
         return Library.description()
     elif text.lower() == "На площадь".lower():
         return Library.end_room()
-
     #Таверна
-    if text.lower == "Здесь же расположена таверна «Кровавый кабан»".lower():
+    if text.lower == 'Здесь же расположена таверна "Кровавый кабан"'.lower():
         return tavern.description()
     elif text.lower() == "Подойти к мужчине за столом".lower():
         return tavern.dialog_start()
@@ -83,8 +79,6 @@ def keyboard(text):
     elif text.lower() == "Дверь справа – в Библиотеку".lower():
        keyboard_show = Library.initiate()
        return keyboard_show
-
-
     # Библиотека
     if text.lower() == "Библиотека".lower():
        keyboard_show = Library.initiate()
@@ -104,7 +98,6 @@ def keyboard(text):
     elif text.lower() == "Хм.. ну ладно".lower():
         keyboard_show = Library.end_room_buttons()
         return keyboard_show
-
     # Кабинки Лорда
     if text.lower() == "Кабинет лорда".lower():
        keyboard_show = LordsRoom.dialog_answer_buttons_1()
@@ -139,9 +132,8 @@ def keyboard(text):
     elif text.lower() == "На площадь".lower():
         keyboard_show = Library.end_room_buttons()
         return keyboard_show
-
     # Таверна
-    if text.lower == "Здесь же расположена таверна «Кровавый кабан»".lower():
+    if text.lower == 'Здесь же расположена таверна "Кровавый кабан"'.lower():
        keyboard_show = tavern.initiate()
        return keyboard_show
     elif text.lower() == "Вернуться на площадь".lower():
