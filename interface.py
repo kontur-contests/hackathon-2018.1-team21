@@ -1,3 +1,5 @@
+import random
+import randomroom
 import Tower
 import Library
 import LordsRoom
@@ -5,6 +7,8 @@ import tavern
 import Elaniya
 import temple
 import Boss
+
+rand = random.randint(1, 10)
 
 def game(text):
     # Башня
@@ -53,7 +57,13 @@ def game(text):
     elif text.lower() == "В библиотеку".lower():
         return Library.description()
     elif text.lower() == "На площадь".lower():
-        return Library.end_room()
+        if rand == 5:
+            return randomroom.description()
+        else:
+            return Library.end_room()
+    elif text.lower() == "Пройти в переулок".lower():
+        return randomroom.death()
+
     #Таверна
     if text.lower() == "Здесь же расположена таверна Кровавый кабан".lower():
         return tavern.description()
@@ -187,8 +197,16 @@ def keyboard(text):
        keyboard_show = Library.initiate()
        return keyboard_show
     elif text.lower() == "На площадь".lower():
-       keyboard_show = Library.end_room_buttons()
-       return keyboard_show
+        if rand == 5:
+            keyboard_show = randomroom.initiate()
+            return keyboard_show
+        else:
+            keyboard_show = Library.end_room_buttons()
+            return keyboard_show
+    elif text.lower() == "Пройти в переулок".lower():
+        keyboard_show = Boss.run_buttons()
+        return keyboard_show
+
     # Таверна
     if text.lower() == "Здесь же расположена таверна Кровавый кабан".lower():
        keyboard_show = tavern.initiate()
