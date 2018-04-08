@@ -77,7 +77,7 @@ def game(text):
     elif text.lower() == "Можете не переживать на этот счет!".lower():
         return Elaniya.dialog_6()
     # Дорога
-    if text.lower() == "Теперь я кажется понимаю о чем вы.. ".lower():
+    if text.lower() == "Теперь я кажется понимаю о чем вы..".lower():
         return temple.description()
     elif text.lower() == "Да, кажется я знаю о каком месте идет речь, по южной дороге есть некий храм, последний раз лорда видели именно у него.".lower():
         return temple.dialog_start()
@@ -225,7 +225,7 @@ def keyboard(text):
         keyboard_show = Elaniya.end_room_buttons()
         return keyboard_show
     #Дорога
-    if text.lower() == "Теперь я кажется понимаю о чем вы.. ".lower():
+    if text.lower() == "Теперь я кажется понимаю о чем вы..".lower():
         keyboard_show = temple.initiate()
         return keyboard_show
     elif text.lower() == "Да, кажется я знаю о каком месте идет речь, по южной дороге есть некий храм, последний раз лорда видели именно у него.".lower():

@@ -74,5 +74,5 @@ def dialog_6():
 
 
 def end_room_buttons():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Теперь я кажется понимаю о чем вы.. ")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Теперь я кажется понимаю о чем вы..")]])
 	return keyboard
