@@ -76,6 +76,14 @@ def game(text):
         return tavern.dialog_1()
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
         return tavern.end_room()
+    elif text.lower() == "Подойти к красивой барышне за дальним столиком".lower():
+        return tavern.dialog_women()
+    elif text.lower() == "Может поднимимся наверх?".lower():
+        return tavern.dialog_women_2()
+    elif text.lower() == "Бежать!!!".lower():
+        return tavern.description_tawern()
+    elif text.lower() == "Ну ее. Я не ищу продажной любви".lower():
+        return tavern.description_tawern()
     #Дом Элании
     if text.lower() == "Я по поручению мастера Торхилда, расследую дело об исчезновении лорда-протектора Винздора *показываете депешу*".lower():
         return Elaniya.dialog_1()
@@ -240,6 +248,18 @@ def keyboard(text):
        return keyboard_show
     elif text.lower() == "Ясно. не переживай, я никому не скажу тоже".lower():
        keyboard_show = Elaniya.dialog_answer_buttons_1()
+       return keyboard_show
+    elif text.lower() == "Подойти к красивой барышне за дальним столиком".lower():
+       keyboard_show = Elaniya.dialog_women_buttons()
+       return keyboard_show
+    elif text.lower() == "Может поднимимся наверх?".lower():
+       keyboard_show = tavern.dialog_women_buttons()
+       return keyboard_show
+    elif text.lower() == "Ну ее. Я не ищу продажной любви".lower():
+       keyboard_show = tavern.initiate()
+       return keyboard_show
+    elif text.lower() == "Бежать".lower():
+       keyboard_show = Library.end_room_buttons()
        return keyboard_show
     #Дом Элании
     if text.lower() == "Я по поручению мастера Торхилда, расследую дело об исчезновении лорда-протектора Винздора *показываете депешу*".lower():
