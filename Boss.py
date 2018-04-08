@@ -146,85 +146,85 @@ def draka():
         if n == 2 and m == 2 and p == 2:
             hpp1 -= 1
             hpp2 -= 1
-            if hpp1 == 0 and hpp2 == 0:
+            if hpp1 <= 0 and hpp2 <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                 return keyboard
             hpg -= 2
-            if hpg == 0:
+            if hpg <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                 return keyboard
         elif n == 2 and m == 2 and p==1:
             hpp1 -= 1
             hpp2 -= 1
-            if hpp1 == 0 and hpp2 == 0:
+            if hpp1 <= 0 and hpp2 <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                 return keyboard
             hpg -= 1
-            if hpg == 0:
+            if hpg <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                 return keyboard
         elif n == 2 and m == 1 and p == 1:
             hpp1 -= 1
             hpp2 -= 1
-            if hpp1 == 0 and hpp2 == 0:
+            if hpp1 <= 0 and hpp2 <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                 return keyboard
             hpg -= 0
-            if hpg == 0:
+            if hpg <= 0:
                 keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                 return keyboard
-            elif n == 2 and m == 1 and p == 2:
+        elif n == 2 and m == 1 and p == 2:
                 hpp1 -= 1
                 hpp2 -= 1
-                if hpp1 == 0 and hpp2 == 0:
+                if hpp1 <= 0 and hpp2 <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                     return keyboard
-                hpg - 1
-                if hpg == 0:
+                hpg -= 1
+                if hpg <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                     return keyboard
                 continue
-            elif n == 1 and m == 2 and p == 2:
+        elif n == 1 and m == 2 and p == 2:
                 hpp1 -= 0
                 hpp2 -= 0
-                if hpp1 == 0 and hpp2 == 0:
+                if hpp1 <= 0 and hpp2 <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                     return keyboard
-                hpg - 2
-                if hpg == 0:
+                hpg -= 2
+                if hpg <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                     return keyboard
                 continue
-            elif n == 1 and m == 2 and p == 1:
+        elif n == 1 and m == 2 and p == 1:
                 hpp1 -= 0
                 hpp2 -= 0
-                if hpp1 == 0 and hpp2 == 0:
+                if hpp1 <= 0 and hpp2 <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                     return keyboard
-                hpg - 1
-                if hpg == 0:
+                hpg -= 1
+                if hpg <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                     return keyboard
                 continue
-            elif n == 1 and m == 1 and p == 2:
+        elif n == 1 and m == 1 and p == 2:
                 hpp1 -= 0
                 hpp2 -= 0
-                if hpp1 == 0 and hpp2 == 0:
+                if hpp1 <= 0 and hpp2 <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                     return keyboard
-                hpg - 2
-                if hpg == 0:
+                hpg -= 2
+                if hpg <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                     return keyboard
                 continue
-            elif n == 1 and m == 1 and p == 1:
+        elif n == 1 and m == 1 and p == 1:
                 hpp1 -= 0
                 hpp2 -= 0
-                if hpp1 == 0 and hpp2 == 0:
+                if hpp1 <= 0 and hpp2 <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы победили приспешников. Отдышавшись, продолжаете путь")]])
                     return keyboard
-                hpg - 2
-                if hpg == 0:
+                hpg -= 0
+                if hpg <= 0:
                     keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
                     return keyboard
                 continue
