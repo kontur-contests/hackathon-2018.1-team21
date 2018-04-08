@@ -23,7 +23,7 @@ def telegram_webhook():
     if "message" in update:
         text = update["message"]["text"]
         chat_id = update["message"]["chat"]["id"]
-        if text.lower() == "Start".lower():
+        if text.lower() == "Start".lower() or text.lower() == "/Start".lower() or text.lower() == "Вы умерли... Начать сначала".lower() or text.lower() == "Ну, дальше будет дальше, а пока с победой! Начинай с начала!".lower() or text.lower() == "Вы спились, начать сначала... Ик".lower() :
             bot.sendMessage(chat_id, "Вы начинаете ваше путешествие перед башней", reply_markup = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Войти в башню")]]))
         else:
             bot.sendMessage(chat_id, "%s" % interface.game(text), reply_markup = interface.keyboard(text))

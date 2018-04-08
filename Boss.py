@@ -127,11 +127,11 @@ def decide_fight():
     return "Вы принимаете решение драться и встаете в боевую позу"
 
 def run_buttons():
-    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="/Start")]])
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
     return keyboard
 
 def apprentice_buttons():
-    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="/Start")]])
+    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы спились, начать сначала... Ик")]])
     return keyboard
 
 def draka():
@@ -151,7 +151,7 @@ def draka():
                 return keyboard
             hpg -= 2
             if hpg <= 0:
-                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                 return keyboard
         elif n == 2 and m == 2 and p==1:
             hpp1 -= 1
@@ -161,7 +161,7 @@ def draka():
                 return keyboard
             hpg -= 1
             if hpg <= 0:
-                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                 return keyboard
         elif n == 2 and m == 1 and p == 1:
             hpp1 -= 1
@@ -171,7 +171,7 @@ def draka():
                 return keyboard
             hpg -= 0
             if hpg <= 0:
-                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                 return keyboard
         elif n == 2 and m == 1 and p == 2:
                 hpp1 -= 1
@@ -181,7 +181,7 @@ def draka():
                     return keyboard
                 hpg -= 1
                 if hpg <= 0:
-                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                     return keyboard
                 continue
         elif n == 1 and m == 2 and p == 2:
@@ -192,7 +192,7 @@ def draka():
                     return keyboard
                 hpg -= 2
                 if hpg <= 0:
-                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                     return keyboard
                 continue
         elif n == 1 and m == 2 and p == 1:
@@ -203,7 +203,7 @@ def draka():
                     return keyboard
                 hpg -= 1
                 if hpg <= 0:
-                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                     return keyboard
                 continue
         elif n == 1 and m == 1 and p == 2:
@@ -214,7 +214,7 @@ def draka():
                     return keyboard
                 hpg -= 2
                 if hpg <= 0:
-                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                     return keyboard
                 continue
         elif n == 1 and m == 1 and p == 1:
@@ -225,7 +225,7 @@ def draka():
                     return keyboard
                 hpg -= 0
                 if hpg <= 0:
-                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                    keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                     return keyboard
                 continue
 
@@ -268,7 +268,7 @@ def bitva_boss():
                 return keyboard
             hpg -= 1
             if hpg == 0:
-                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                 return keyboard
             continue
         elif n == 2 and m == 1:
@@ -280,7 +280,7 @@ def bitva_boss():
         elif n == 1 and m == 2:
             hpg -= 1
             if hpg == 0:
-                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Start")]])
+                keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Вы умерли... Начать сначала")]])
                 return keyboard
             continue
         elif n == 1 and m == 1:

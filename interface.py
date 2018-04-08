@@ -7,6 +7,9 @@ import tavern
 import Elaniya
 import temple
 import Boss
+import FinalOne
+import FinalTwo
+from telepot.namedtuple import ReplyKeyboardMarkup, KeyboardButton, ReplyKeyboardRemove
 
 rand = random.randint(1, 2)
 
@@ -128,6 +131,21 @@ def game(text):
         return Boss.dialog_10()
     elif text.lower() == """Помочь лорду встать""".lower():
         return Boss.dialog_11()
+    #Финал 1
+    if text.lower() == "Рассказать лорду о том, что он пытался принести в жертву свою невесту, чуть не убил своего слугу.".lower():
+        return FinalOne.description()
+    elif text.lower() == "Выйти на поверхность".lower():
+        return FinalOne.dialog_1()
+    elif text.lower() == "Рассказать правду о том, что вам удалось выяснить и что произошло в крипте".lower():
+        return FinalOne.dialog_2()
+    elif text.lower() == "Солгать и выставить лорда борцом с культистами".lower():
+        return FinalOne.dialog_3()
+    # Финал 2
+    if text.lower() == "Ничего не говорить и попытаться увести лорда в город".lower():
+        return FinalTwo.description()
+    elif text.lower() == "Помочь лорду идти до города.".lower():
+        return FinalTwo.dialog_1()
+
 
 def keyboard(text):
     # Башня
@@ -304,3 +322,17 @@ def keyboard(text):
     elif text.lower() == """Помочь лорду встать""".lower():
         keyboard_show = Boss.end_room_buttons()
         return keyboard_show
+    #Финал 1
+    if text.lower() == "Рассказать лорду о том, что он пытался принести в жертву свою невесту, чуть не убил своего слугу.".lower():
+        keyboard_show = FinalOne.dialog_answer_buttons_1()
+        return keyboard_show
+    elif text.lower() == "Выйти на поверхность".lower():
+        keyboard_show = FinalOne.dialog_answer_buttons_2()
+        return keyboard_show
+        # Финал 2
+    if text.lower() == "Ничего не говорить и попытаться увести лорда в город".lower():
+        keyboard_show = FinalTwo.dialog_answer_buttons_1()
+        return keyboard_show
+    if text.lower() == "Рассказать правду о том, что вам удалось выяснить и что произошло в крипте".lower() or text.lower() == "Солгать и выставить лорда борцом с культистами".lower() or text.lower() == "Помочь лорду идти до города.".lower():
+        keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="Ну, дальше будет дальше, а пока с победой! Начинай с начала!")]])
+        return keyboard
