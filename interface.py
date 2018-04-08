@@ -250,7 +250,7 @@ def keyboard(text):
        keyboard_show = Elaniya.dialog_answer_buttons_1()
        return keyboard_show
     elif text.lower() == "Подойти к красивой барышне за дальним столиком".lower():
-       keyboard_show = Elaniya.dialog_women_buttons()
+       keyboard_show = tavern.dialog_women_buttons()
        return keyboard_show
     elif text.lower() == "Может поднимимся наверх?".lower():
        keyboard_show = tavern.dialog_women_buttons()
