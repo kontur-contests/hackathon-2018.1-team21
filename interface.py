@@ -84,7 +84,7 @@ def game(text):
     #Храм
     if text.lower() == "Осмотреть храм".lower():
         return Boss.dialog_2()
-    elif text.lower() == """Осмотреть внимательно""".lower():
+    elif text.lower() == "Осмотреть более внимательно".lower():
         return Boss.dialog_3()
     elif text.lower() == "Солнце в зените, Полумесяц, Восход, Закат".lower():
         return Boss.portal()
@@ -235,7 +235,7 @@ def keyboard(text):
     if text.lower() == "Осмотреть храм".lower():
         keyboard_show = Boss.dialog_answer_buttons_3()
         return keyboard_show
-    elif text.lower() == """Осмотреть внимательно""".lower():
+    elif text.lower() == """Осмотреть более внимательно""".lower():
         keyboard_show = Boss.statui_asnwer()
         return keyboard_show
     elif text.lower() == "Солнце в зените, Полумесяц, Восход, Закат".lower():

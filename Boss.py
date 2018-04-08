@@ -40,7 +40,7 @@ def dialog_2():
     Но нет ничего похожего на вход"""
 
 def dialog_answer_buttons_3():
-	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="""Осмотреть внимательно""")]])
+	keyboard = ReplyKeyboardMarkup(keyboard=[[KeyboardButton(text="""Осмотреть более внимательно""")]])
 	return keyboard
 
 def dialog_3():
