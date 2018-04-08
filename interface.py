@@ -8,7 +8,7 @@ import Elaniya
 import temple
 import Boss
 
-rand = random.randint(1, 10)
+rand = random.randint(1, 2)
 
 def game(text):
     # Башня
@@ -57,7 +57,7 @@ def game(text):
     elif text.lower() == "В библиотеку".lower():
         return Library.description()
     elif text.lower() == "На площадь".lower():
-        if rand == 5:
+        if rand == 2:
             return randomroom.description()
         else:
             return Library.end_room()
@@ -197,7 +197,7 @@ def keyboard(text):
        keyboard_show = Library.initiate()
        return keyboard_show
     elif text.lower() == "На площадь".lower():
-        if rand == 5:
+        if rand == 2:
             keyboard_show = randomroom.initiate()
             return keyboard_show
         else:
