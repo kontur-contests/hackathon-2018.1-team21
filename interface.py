@@ -258,7 +258,7 @@ def keyboard(text):
     elif text.lower() == "Ну ее. Я не ищу продажной любви".lower():
        keyboard_show = tavern.initiate()
        return keyboard_show
-    elif text.lower() == "Бежать".lower():
+    elif text.lower() == "Бежать!!!".lower():
        keyboard_show = Library.end_room_buttons()
        return keyboard_show
     #Дом Элании
