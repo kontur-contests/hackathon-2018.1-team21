@@ -81,7 +81,7 @@ def game(text):
     elif text.lower() == "Может поднимимся наверх?".lower():
         return tavern.dialog_women_2()
     elif text.lower() == "Бежать!!!".lower():
-        return tavern.description_tawern()
+        return tavern.description_tawern_run()
     elif text.lower() == "Ну ее. Я не ищу продажной любви".lower():
         return tavern.description_tawern()
     #Дом Элании
@@ -253,7 +253,7 @@ def keyboard(text):
        keyboard_show = tavern.dialog_women_buttons()
        return keyboard_show
     elif text.lower() == "Может поднимимся наверх?".lower():
-       keyboard_show = tavern.dialog_women_buttons()
+       keyboard_show = tavern.dialog_women_buttons2()
        return keyboard_show
     elif text.lower() == "Ну ее. Я не ищу продажной любви".lower():
        keyboard_show = tavern.initiate()
